@@ -32,9 +32,10 @@ object Functions extends App {
 
   //2 factorial function 1 * 2 * 3 * ... * n
   def factorial(n: Int): Int = {
-    if (n == 1) n
+    if (n <= 0) 1
     else computeFactorialNextValue(1, 1, n)
   }
+
   private def computeFactorialNextValue(accumulatedValue: Int, iterationIndex: Int, stopAtIteration: Int): Int = {
     val result = accumulatedValue * iterationIndex
     if (stopAtIteration == iterationIndex) {
@@ -50,20 +51,25 @@ object Functions extends App {
   //3 A Fibonacci Function
   def fibonacci(n: Int): Int = {
     if (n >= 0 && n <= 2) 1
-    else computeNextFibonacci(1, 1, 3, n)
+    else computeNextFibonacciNumber(1, 1, 3, n)
   }
 
-  private def computeNextFibonacci(nTwoIterationsBefore: Int, nOneIterationBefore: Int, currentIteration: Int, stopAtIteration: Int): Int = {
+  private def computeNextFibonacciNumber(nTwoIterationsBefore: Int, nOneIterationBefore: Int, currentIteration: Int, stopAtIteration: Int): Int = {
     val result = nTwoIterationsBefore + nOneIterationBefore
     if (stopAtIteration == currentIteration) {
       result
     } else {
       val nextIteration = currentIteration + 1
-      computeNextFibonacci(nOneIterationBefore, result, nextIteration, stopAtIteration)
+      computeNextFibonacciNumber(nOneIterationBefore, result, nextIteration, stopAtIteration)
     }
   }
 
   println(fibonacci(2))
   println(fibonacci(3))
   println(fibonacci(8))
+
+  //Is Prime number function
+  def isPrime(n: Int): Boolean = !((2 until n - 1) exists (n % _ == 0))
+  println(isPrime(17))
+  println(isPrime(94))
 }
