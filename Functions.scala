@@ -46,7 +46,14 @@ object Functions extends App {
     }
   }
 
+  //2.1 factorial simplified
+  def factorial2(n: Int): Int = {
+    if (n <= 0) 1
+    else n * factorial2(n - 1)
+  }
+
   println(factorial(4))
+  println(factorial2(4))
 
   //3 A Fibonacci Function
   def fibonacci(n: Int): Int = {
@@ -64,9 +71,19 @@ object Functions extends App {
     }
   }
 
+  //3.1 fibonacci simplified
+  def fibonacci2(n: Int): Int = {
+    if (n >= 0 && n <= 2) 1
+    else fibonacci2(n - 2) + fibonacci2(n - 1)
+  }
+
   println(fibonacci(2))
   println(fibonacci(3))
   println(fibonacci(8))
+
+  println(fibonacci2(2))
+  println(fibonacci2(3))
+  println(fibonacci2(8))
 
   //Is Prime number function
   def isPrime(n: Int): Boolean = !((2 until n - 1) exists (n % _ == 0))
