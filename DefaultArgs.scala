@@ -1,7 +1,7 @@
 package lectures.part1basics
 
 /**
-  * Created by Alexander Krasovsky on 25.06.2018.
+  * Created by Alexander Krasovsky on 25.06.2018. test
   */
 object DefaultArgs extends App {
 
