@@ -1,8 +1,7 @@
 package lectures.part1basics
 
-/**
-  * Created by Alexander Krasovsky on 25.06.2018.
-  */
+
+
 object CBNvsCBV extends App {
 
   def calledByValue(x: Long): Unit = {
